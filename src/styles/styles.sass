@@ -1,0 +1,159 @@
+@import "~@blueprintjs/core/lib/scss/variables";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@600&display=swap');
+
+$lipstick: #B33E50
+$pink: #D86F71
+$beige: #D8B790
+$dark-brown: #390A1E
+
+body
+  font-size: 150%
+  background: $pink url('../assets/background.jpg') center center no-repeat
+  background-size: cover
+  height: 100vh
+  overflow: hidden
+  font-family: 'Open Sans', sans-serif
+
+.Header
+  position: fixed
+  left: 1rem
+  top: 1rem
+
+  a
+    color: #fff
+
+section
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+  flex-direction: column
+
+  h1, h2
+    font-size: 4.5rem
+    margin: 2rem 0 0
+    text-transform: uppercase
+    font-family: 'Oswald', sans-serif
+    font-weight: 600
+    letter-spacing: -3px
+    text-shadow: 4px 4px $lipstick
+    text-align: center
+
+  h2
+    color: #fff
+    letter-spacing: -2px
+    margin: 0 0 .5rem
+    font-size: 2.5rem
+
+  .Question
+    margin: 4rem auto
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    flex-direction: column
+
+    .text
+      background: #fff
+      padding: 0.5rem 4rem
+      margin-bottom: 1rem
+      border-radius: 2px
+
+    h2
+      color: #333
+      text-shadow: none
+
+    .bp3-button
+      margin-top: 2rem
+
+    .number
+      font-size: 7rem
+      text-shadow: 1px 1px #ccc
+      margin-bottom: 1rem
+
+    p
+      font-size: 2.5rem
+      max-width: 1020px
+      line-height: 1.5
+
+  .QuestionNav
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-evenly
+    background: rgba(0, 0, 0, 0.2)
+    padding: 1rem
+
+
+.answer
+  font-size: 2.8rem
+  line-height: 1.2
+  text-align: center
+
+  .artist
+    font-weight: 800
+    display: block
+    margin-top: 1rem
+
+img
+  height: auto
+  width: auto
+  max-width: 75vh
+  max-height: 55vh
+
+.Animals
+  .Question
+    p
+      font-size: 1.5rem
+      margin: 1rem 0 0
+
+      strong
+        font-size: 2rem
+        margin-right: 5px
+
+.Landing
+
+  ul
+    list-style: none
+    text-align: center
+    font-size: 0
+    margin-top: 2rem
+
+    li
+      display: inline-block
+      font-size: 2rem
+      background: $lipstick
+
+      &:not(:last-child)
+        border-right: 2px solid #fff
+
+      a
+        color: #fff
+        padding: 1rem 2rem
+        display: block
+        transition: all 0.2s ease
+        text-decoration: none
+
+        &:hover
+          background: $dark-brown
+
+.description
+  max-width: 960px
+  font-size: 2rem
+  line-height: 1.5
+  margin: 2rem 0
+
+.bp3-overlay-backdrop
+  background: rgba(16, 22, 26, 0.9)
+
+.Music
+  .bp3-icon
+    color: #fff
+    position: fixed
+    top: 1rem
+    right: 1rem
+    cursor: pointer

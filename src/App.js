@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { withRouter, Switch, Route, Link } from "react-router-dom";
+import { quiz } from "./utils.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Landing from "./components/Landing";
+import Music from "./components/Music";
+import Movies from "./components/Movies";
+import Sports from "./components/Sports";
+import Animals from "./components/Animals";
+import Header from "./components/Header";
 
-export default App;
+import "./App.scss";
+
+const App = () => {
+    const [questions, setQuestions] = useState(quiz);
+
+    return (
+        <div className="App">
+            <Header />
+            <Switch>
+                <Route path="/music">
+                    <Music quiz={questions.find((q) => q.category === "Music")} />
+                </Route>
+                <Route path="/movies">
+                    <Movies quiz={questions.find((q) => q.category === "Movies")} />
+                </Route>
+                <Route path="/sports">
+                    <Sports quiz={questions.find((q) => q.category === "Sports")} />
+                </Route>
+                <Route path="/animals">
+                    <Animals quiz={questions.find((q) => q.category === "Animals")} />
+                </Route>
+                <Route path="/" exact={true}>
+                    <Landing quiz={questions} />
+                </Route>
+            </Switch>
+        </div>
+    );
+};
+
+export default withRouter(App);
